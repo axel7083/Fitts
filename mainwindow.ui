@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>653</width>
+    <height>367</height>
+   </rect>
+  </property>
+  <property name="palette">
+   <palette>
+    <active>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>240</red>
+        <green>240</green>
+        <blue>240</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>653</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFichier">
+    <property name="title">
+     <string>Fichier</string>
+    </property>
+    <widget class="QMenu" name="menuImportation">
+     <property name="title">
+      <string>Importation</string>
+     </property>
+     <addaction name="actionParam_tres"/>
+     <addaction name="actionR_sultats_2"/>
+    </widget>
+    <widget class="QMenu" name="menuExportation">
+     <property name="title">
+      <string>Exportation</string>
+     </property>
+     <addaction name="actionParam_tres_2"/>
+     <addaction name="actionR_sultats_3"/>
+    </widget>
+    <addaction name="menuImportation"/>
+    <addaction name="menuExportation"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuitter"/>
+   </widget>
+   <widget class="QMenu" name="menuLangue">
+    <property name="title">
+     <string>Langue</string>
+    </property>
+    <addaction name="actionFran_ais"/>
+    <addaction name="actionEnglish"/>
+   </widget>
+   <addaction name="menuFichier"/>
+   <addaction name="menuLangue"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionR_sultats">
+   <property name="text">
+    <string>Importation</string>
+   </property>
+  </action>
+  <action name="actionParam_tres">
+   <property name="text">
+    <string>Paramètres</string>
+   </property>
+  </action>
+  <action name="actionR_sultats_2">
+   <property name="text">
+    <string>Résultats</string>
+   </property>
+  </action>
+  <action name="actionQuitter">
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </action>
+  <action name="actionParam_tres_2">
+   <property name="text">
+    <string>Paramètres</string>
+   </property>
+  </action>
+  <action name="actionR_sultats_3">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Résultats</string>
+   </property>
+  </action>
+  <action name="actionFran_ais">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="src/icons.qrc">
+     <normaloff>:/icons/fr_flag.ico</normaloff>:/icons/fr_flag.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Français</string>
+   </property>
+  </action>
+  <action name="actionEnglish">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="src/icons.qrc">
+     <normaloff>:/icons/flag_en.ico</normaloff>:/icons/flag_en.ico</iconset>
+   </property>
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="src/icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

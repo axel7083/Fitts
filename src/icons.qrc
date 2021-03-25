@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/flag_en.ico</file>
+        <file>icons/fr_flag.ico</file>
+        <file>icons/icon.ico</file>
+    </qresource>
+</RCC>

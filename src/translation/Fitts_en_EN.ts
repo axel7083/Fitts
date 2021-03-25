@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="en_US">
+<context>
+    <name>MainWindow</name>
+    <message>
+        <source>MainWindow</source>
+        <translation>Fitts</translation>
+    </message>
+    <message>
+        <source>Fichier</source>
+        <translation>File</translation>
+    </message>
+    <message>
+        <source>Importation</source>
+        <translation>Import</translation>
+    </message>
+    <message>
+        <source>Exportation</source>
+        <translation>Export</translation>
+    </message>
+    <message>
+        <source>Langue</source>
+        <translation>Language</translation>
+    </message>
+    <message>
+        <source>Paramètres</source>
+        <translation>Settings</translation>
+    </message>
+    <message>
+        <source>Résultats</source>
+        <translation>Results</translation>
+    </message>
+    <message>
+        <source>Quitter</source>
+        <translation>Exit</translation>
+    </message>
+    <message>
+        <source>Français</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation></translation>
+    </message>
+</context>
+<context>
+    <name>Settings</name>
+    <message>
+        <source>Form</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation></translation>
+    </message>
+</context>
+</TS>
