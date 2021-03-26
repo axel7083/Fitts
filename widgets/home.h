@@ -21,17 +21,16 @@ class Home : public QWidget
 public:
     explicit Home(QWidget *parent = nullptr);
     ~Home();
-    void reset();
 
 private:
     Ui::Home *ui;
     GraphicWidget *graphicView;
 
 signals:
-    void onHomeEvent(int);
+    void onHomeEvent(int, void *);
 
 private slots:
-    void onGraphFinish(int);
+    void onGraphFinish(FittsModel*);
     void on_home_settings_btn_clicked();
 };
 

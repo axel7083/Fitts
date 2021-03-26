@@ -28,14 +28,15 @@ private slots:
     void on_actionEnglish_triggered();
     void on_actionFran_ais_triggered();
     void on_actionQuitter_triggered();
-    void onHomeEvent(int);
+    void onHomeEvent(int, void *);
     void onSettingsEvent(int);
+    void onResultsEvent(int);
     void changeEvent(QEvent* event);
 
 private:
     void openSettings();
     void openHome();
-    void openResults();
+    void openResults(FittsModel *model);
     Ui::MainWindow *ui;
     QSettings* m_settings;
     QTranslator translator;

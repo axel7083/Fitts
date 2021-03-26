@@ -15,10 +15,10 @@ class GraphicWidget : public QGraphicsView
     Q_OBJECT
 public:
     GraphicWidget();
-    void reset();
+
 
 signals:
-    void onFinish(int);
+    void onFinish(FittsModel*);
 
 protected:
     void mousePressEvent(QMouseEvent *event);
@@ -29,6 +29,7 @@ private:
     void cibleClicked(int x, int y);
     void nextCible();
     void finish();
+    void calculateResult();
     FittsModel * fittsModel;
     QElapsedTimer *timer;
 };

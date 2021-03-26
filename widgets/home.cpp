@@ -5,20 +5,12 @@ Home::Home(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Home)
 {
-
+    // On met en place l'UI avec le fichier généré à partir de mainwindows.ui
     ui->setupUi(this);
 
-    //QVBoxLayout *mainLayout = new QVBoxLayout(this);
-
-    //QStackedLayout *mainStack = new QStackedLayout;
-    //mainLayout->addLayout(mainStack);
-
-    QLabel *label = new QLabel(this);
-    label->setText("Test");
-    ui->homeContainer->addWidget(label);
-
+    // On ajoute nous même le graphique CAR il ne peut pas être ajouter depuis l'éditeur
     graphicView = new GraphicWidget;
-    connect(graphicView, SIGNAL(onFinish(int)), this, SLOT(onGraphFinish(int)));
+    connect(graphicView, SIGNAL(onFinish(FittsModel*)), this, SLOT(onGraphFinish(FittsModel*)));
     ui->homeContainer->addWidget(graphicView);
 }
 
@@ -27,17 +19,15 @@ Home::~Home()
     delete ui;
 }
 
-void Home::reset() {
-    graphicView->reset();
+
+// Cette fonction est un callback du widget graphwidget
+void Home::onGraphFinish(FittsModel* val) {
+    qDebug() << "onGraphFinish";
+    emit onHomeEvent(HOME_GAME_END, (void *) val);
 }
 
-
-void Home::onGraphFinish(int i) {
-    qDebug() << "onGraphFinish ";
-    emit onHomeEvent(HOME_GAME_END);
-}
-
+// Simple listener du bouton
 void Home::on_home_settings_btn_clicked()
 {
-    emit onHomeEvent(HOME_OPEN_SETTINGS);
+    emit onHomeEvent(HOME_OPEN_SETTINGS,NULL);
 }

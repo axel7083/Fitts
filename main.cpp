@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
     QCoreApplication::setOrganizationName("HM40");
     QCoreApplication::setApplicationName("Fitts");
 
+    // On met en place le langage enregistré.
     setupLanguage(&a, &translator);
 
     MainWindow w;

@@ -5,22 +5,21 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
     , m_settings(new QSettings("options.ini", QSettings::IniFormat))
 {
+    // On setup l'ui depuis le fichier
     ui->setupUi(this);
 
-    //this->settings = QSettings settings("Settings", QSettings::NativeFormat);
-    home = new Home;
-    connect(home, SIGNAL(onHomeEvent(int)), this, SLOT(onHomeEvent(int)));
-    this->setCentralWidget(home);
+    // On créer puis place le widget Home au centre
+    openHome();
 
 }
 
-void MainWindow::onHomeEvent(int val) {
+// Ceci permet de recevoir des events depuis le widget Home
+void MainWindow::onHomeEvent(int val, void *obj) {
     qDebug() << "[MainWindow] onHomeEvent";
-
     switch(val) {
     case HOME_GAME_END:
         // TODO: go to result page
-        openResults(); // => sends parameters
+        openResults((FittsModel *) obj); // => sends parameters
         break;
     case HOME_OPEN_SETTINGS:
         openSettings();
@@ -31,6 +30,7 @@ void MainWindow::onHomeEvent(int val) {
     }
 }
 
+// Ceci permet de recevoir des events depuis le widget Settings
 void MainWindow::onSettingsEvent(int val) {
     qDebug() << "[MainWindow] onSettingsEvent";
 
@@ -39,7 +39,18 @@ void MainWindow::onSettingsEvent(int val) {
         home = new Home;
         connect(home, SIGNAL(onHomeEvent(int)), this, SLOT(onHomeEvent(int)));
         this->setCentralWidget(home);
-        //this->setCentralWidget(home);
+        break;
+    default:
+
+        break;
+    }
+}
+
+void MainWindow::onResultsEvent(int val) {
+    qDebug() << "[MainWindow] onResultsEvent";
+    switch(val) {
+    case RESULTS_RESTART:
+        openHome();
         break;
     default:
 
@@ -48,17 +59,18 @@ void MainWindow::onSettingsEvent(int val) {
 }
 
 void MainWindow::openHome() {
+    qDebug() << "Opening home";
     home = new Home;
-    connect(home, SIGNAL(onHomeEvent(int)), this, SLOT(onHomeEvent(int)));
+    connect(home, SIGNAL(onHomeEvent(int,void*)), this, SLOT(onHomeEvent(int,void*)));
     this->setCentralWidget(home);
 }
 
-void MainWindow::openResults() {
-    results = new Results;
-    //connect(home, SIGNAL(onHomeEvent(int)), this, SLOT(onHomeEvent(int)));
+void MainWindow::openResults(FittsModel *model) {
+    qDebug() << "Opening results";
+    results = new Results(model);
+    connect(results, SIGNAL(onResultsEvent(int)), this, SLOT(onResultsEvent(int)));
     this->setCentralWidget(results);
 }
-
 
 void MainWindow::openSettings() {
     qDebug() << "Opening settings";
@@ -66,8 +78,6 @@ void MainWindow::openSettings() {
     connect(settings, SIGNAL(onSettingsEvent(int)), this, SLOT(onSettingsEvent(int)));
     this->setCentralWidget(settings);
 }
-
-
 
 MainWindow::~MainWindow()
 {
@@ -85,19 +95,21 @@ void MainWindow::changeEvent(QEvent* event)
     QMainWindow::changeEvent(event);
 }
 
-
+// Cette fonction est appelé lorsque l'utilisateur appuis sur "langue->français"
 void MainWindow::on_actionFran_ais_triggered()
 {
     m_settings->setValue("Language",1);
     updateLanguage(m_settings, &translator);
 }
 
+// Cette fonction est appelé lorsque l'utilisateur appuis sur "langue->English"
 void MainWindow::on_actionEnglish_triggered()
 {
     m_settings->setValue("Language",2);
     updateLanguage(m_settings, &translator);
 }
 
+// Cette fonction est appelé lorsque l'utilisateur appuis sur "Fichier->quitter"
 void MainWindow::on_actionQuitter_triggered()
 {
     qApp->exit();

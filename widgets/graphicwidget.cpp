@@ -1,16 +1,43 @@
 #include "graphicwidget.h"
 
+
+#include <QtGlobal>
+#include <QChart>
+#include <QLineSeries>
+#include <QChartView>
+#include <QBarSeries>
+#include <QBarSet>
+#include <QLegend>
+#include <QBarCategoryAxis>
+#include <QHorizontalBarSeries>
+#include <QCategoryAxis>
+#include <QPieSeries>
+#include <QPieSlice>
+#include <QStringList>
+#include <QElapsedTimer>
+
+/*
+Cette classe contient de nombreuse fonction
+qui n'ont pas été créer par les auteurs du programme
+elles ont été reprise à partir du programme initial à
+modifier
+*/
+
 GraphicWidget::GraphicWidget() {
     fittsModel = new FittsModel();
 
+    // On met en place le widget
     setup();
+
+    // On lance le jeu
     initGame();
 }
 
+
+// Click listener
 void GraphicWidget::mousePressEvent(QMouseEvent *event) {
     cibleClicked(event->x(), event->y());
 }
-
 
 void GraphicWidget::setup() {
     this->setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOff);
@@ -45,7 +72,7 @@ void GraphicWidget::initGame() {
 void GraphicWidget::cibleClicked(int x, int y) {
     if(this->fittsModel->cercleCenter.isEmpty()) {
         qDebug() << "premier click";
-        // Si vide alors premier click, on demarre le timer
+        // Si vide alors premier click, on demarre le timer TODO: fix that
         this->timer = new QElapsedTimer;
         timer->start();
 
@@ -104,11 +131,8 @@ void GraphicWidget::nextCible() {
 void GraphicWidget::finish() {
 
     qDebug() << "Program finish";
-    emit onFinish(5);
+    emit onFinish(fittsModel);
     //this->fittsView->graphicView->setEnabled(false);
     //this->fittsView->resultBtn->setEnabled(true);
 }
 
-void GraphicWidget::reset() {
-    initGame();
-}

@@ -29,10 +29,10 @@ HEADERS += \
     utils.h
 
 FORMS += \
-    home.ui \
-    mainwindow.ui \
-    results.ui \
-    settings.ui
+    ./forms/home.ui \
+    ./forms/mainwindow.ui \
+    ./forms/results.ui \
+    ./forms/settings.ui
 
 TRANSLATIONS += \
     src/translations/Fitts_en_EN.ts
