@@ -82,7 +82,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QDoubleSpinBox" name="doubleSpinBox">
+        <widget class="QDoubleSpinBox" name="edit_a">
          <property name="minimumSize">
           <size>
            <width>80</width>
@@ -160,7 +160,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+        <widget class="QDoubleSpinBox" name="edit_b">
          <property name="minimumSize">
           <size>
            <width>80</width>
@@ -225,7 +225,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QSpinBox" name="spinBox">
+        <widget class="QSpinBox" name="edit_target_count">
          <property name="minimumSize">
           <size>
            <width>80</width>
@@ -290,7 +290,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QSpinBox" name="spinBox_2">
+        <widget class="QSpinBox" name="edit_min_target">
          <property name="minimumSize">
           <size>
            <width>80</width>
@@ -355,7 +355,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QSpinBox" name="spinBox_3">
+        <widget class="QSpinBox" name="edit_max_target">
          <property name="minimumSize">
           <size>
            <width>80</width>
@@ -369,6 +369,9 @@
          </property>
          <property name="specialValueText">
           <string>150</string>
+         </property>
+         <property name="maximum">
+          <number>200</number>
          </property>
         </widget>
        </item>
@@ -390,7 +393,20 @@
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="restore_default">
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Restaurer les valeurs par default</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="validate_btn">
          <property name="minimumSize">
           <size>
            <width>200</width>

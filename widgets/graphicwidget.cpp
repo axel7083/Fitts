@@ -1,20 +1,7 @@
 #include "graphicwidget.h"
 
 
-#include <QtGlobal>
-#include <QChart>
-#include <QLineSeries>
-#include <QChartView>
-#include <QBarSeries>
-#include <QBarSet>
-#include <QLegend>
-#include <QBarCategoryAxis>
-#include <QHorizontalBarSeries>
-#include <QCategoryAxis>
-#include <QPieSeries>
-#include <QPieSlice>
-#include <QStringList>
-#include <QElapsedTimer>
+
 
 /*
 Cette classe contient de nombreuse fonction
@@ -23,8 +10,11 @@ elles ont été reprise à partir du programme initial à
 modifier
 */
 
-GraphicWidget::GraphicWidget() {
-    fittsModel = new FittsModel();
+GraphicWidget::GraphicWidget(FittsModel *model) {
+    if(model == NULL)
+        fittsModel = new FittsModel();
+    else
+        fittsModel = model;
 
     // On met en place le widget
     setup();

@@ -1,7 +1,7 @@
 #include "home.h"
 #include "ui_home.h"
 
-Home::Home(QWidget *parent) :
+Home::Home(FittsModel *model, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Home)
 {
@@ -9,7 +9,7 @@ Home::Home(QWidget *parent) :
     ui->setupUi(this);
 
     // On ajoute nous même le graphique CAR il ne peut pas être ajouter depuis l'éditeur
-    graphicView = new GraphicWidget;
+    graphicView = new GraphicWidget(model);
     connect(graphicView, SIGNAL(onFinish(FittsModel*)), this, SLOT(onGraphFinish(FittsModel*)));
     ui->homeContainer->addWidget(graphicView);
 }

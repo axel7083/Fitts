@@ -8,15 +8,16 @@ Results::Results(FittsModel *model, QWidget *parent) :
 {
     ui->setupUi(this);
 
-    qDebug() << model->a;
 
+    // Creating a chart view
     plot = new QChartView;
+
+    // Using utils function, building the chart
     plot->setChart(buildGraphResults(model));
     plot->setRenderHint(QPainter::Antialiasing);
+
+    // Adding the chart to the layout
     ui->container->addWidget(plot);
-
-
-
 }
 
 Results::~Results()

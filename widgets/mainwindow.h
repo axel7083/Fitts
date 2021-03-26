@@ -29,7 +29,7 @@ private slots:
     void on_actionFran_ais_triggered();
     void on_actionQuitter_triggered();
     void onHomeEvent(int, void *);
-    void onSettingsEvent(int);
+    void onSettingsEvent(int, void *);
     void onResultsEvent(int);
     void changeEvent(QEvent* event);
 
@@ -44,5 +44,7 @@ private:
     Home *home = NULL;
     Settings *settings = NULL;
     Results *results = NULL;
+
+    FittsModel *model = NULL;
 };
 #endif // MAINWINDOW_H

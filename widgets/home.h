@@ -19,7 +19,7 @@ class Home : public QWidget
     Q_OBJECT
 
 public:
-    explicit Home(QWidget *parent = nullptr);
+    explicit Home(FittsModel *model = NULL, QWidget *parent = nullptr);
     ~Home();
 
 private:

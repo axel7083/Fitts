@@ -14,7 +14,7 @@ class GraphicWidget : public QGraphicsView
 {
     Q_OBJECT
 public:
-    GraphicWidget();
+    GraphicWidget(FittsModel *model = NULL);
 
 
 signals:

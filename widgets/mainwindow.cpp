@@ -31,14 +31,13 @@ void MainWindow::onHomeEvent(int val, void *obj) {
 }
 
 // Ceci permet de recevoir des events depuis le widget Settings
-void MainWindow::onSettingsEvent(int val) {
+void MainWindow::onSettingsEvent(int val, void *obj) {
     qDebug() << "[MainWindow] onSettingsEvent";
 
     switch(val) {
     case SETTINGS_CLOSE:
-        home = new Home;
-        connect(home, SIGNAL(onHomeEvent(int)), this, SLOT(onHomeEvent(int)));
-        this->setCentralWidget(home);
+        model = (FittsModel*) obj;
+        openHome();
         break;
     default:
 
@@ -46,6 +45,7 @@ void MainWindow::onSettingsEvent(int val) {
     }
 }
 
+// Ceci permet de recevoir des events depuis le widget Results
 void MainWindow::onResultsEvent(int val) {
     qDebug() << "[MainWindow] onResultsEvent";
     switch(val) {
@@ -60,7 +60,7 @@ void MainWindow::onResultsEvent(int val) {
 
 void MainWindow::openHome() {
     qDebug() << "Opening home";
-    home = new Home;
+    home = new Home(model);
     connect(home, SIGNAL(onHomeEvent(int,void*)), this, SLOT(onHomeEvent(int,void*)));
     this->setCentralWidget(home);
 }
@@ -74,8 +74,8 @@ void MainWindow::openResults(FittsModel *model) {
 
 void MainWindow::openSettings() {
     qDebug() << "Opening settings";
-    settings = new Settings(this);
-    connect(settings, SIGNAL(onSettingsEvent(int)), this, SLOT(onSettingsEvent(int)));
+    settings = new Settings(model);
+    connect(settings, SIGNAL(onSettingsEvent(int,void*)), this, SLOT(onSettingsEvent(int,void*)));
     this->setCentralWidget(settings);
 }
 

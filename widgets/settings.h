@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "constants.h"
+#include "./models/fittsmodel.h"
 
 namespace Ui {
 class Settings;
@@ -13,17 +14,20 @@ class Settings : public QWidget
     Q_OBJECT
 
 public:
-    explicit Settings(QWidget *parent = nullptr);
+    explicit Settings(FittsModel *model = NULL, QWidget *parent = nullptr);
     ~Settings();
 
 signals:
-    void onSettingsEvent(int);
+    void onSettingsEvent(int, void *);
 
 private slots:
-    void on_pushButton_clicked();
+    void on_validate_btn_clicked();
+    void on_restore_default_clicked();
 
 private:
     Ui::Settings *ui;
+    FittsModel * fittsModel;
+    void setupData();
 };
 
 #endif // SETTINGS_H
