@@ -10,7 +10,6 @@
 #include <QInputDialog>
 #include <math.h>
 
-
 #include "./models/fittsmodel.h"
 
 #include <QChart>

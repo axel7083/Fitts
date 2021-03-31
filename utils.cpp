@@ -39,7 +39,6 @@ void setupLanguage(QApplication* app, QTranslator *translator)
 
     translator->load(val);
     app->installTranslator(translator);
-
 }
 
 // Cette fonction permet d'actualisé un langage
@@ -61,8 +60,7 @@ void updateLanguage(QSettings *settings, QTranslator *translator) {
 QChart *buildGraphResults(FittsModel *fittsModel) {
 
     QChart *chart = new QChart;
-    //fittsView->plot->setChart(chart);
-    //fittsView->plot->setRenderHint(QPainter::Antialiasing);
+
     chart->setTitle("Résultats loi Fitts");
     chart->setAnimationOptions(QChart::AllAnimations);
     chart->createDefaultAxes();

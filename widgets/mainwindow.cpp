@@ -10,7 +10,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     // On créer puis place le widget Home au centre
     openHome();
-
 }
 
 // Ceci permet de recevoir des events depuis le widget Home
@@ -18,7 +17,6 @@ void MainWindow::onHomeEvent(int val, void *obj) {
     qDebug() << "[MainWindow] onHomeEvent";
     switch(val) {
     case HOME_GAME_END:
-        // TODO: go to result page
         openResults((FittsModel *) obj); // => sends parameters
         break;
     case HOME_OPEN_SETTINGS:
@@ -61,7 +59,7 @@ void MainWindow::onResultsEvent(int val) {
 void MainWindow::openHome() {
     qDebug() << "Opening home";
     home = new Home(model);
-    connect(home, SIGNAL(onHomeEvent(int,void*)), this, SLOT(onHomeEvent(int,void*)));
+    connect(home, SIGNAL(onHomeEvent(int,void*)), this, SLOT(onHomeEvent(int,void*)));    
     this->setCentralWidget(home);
 }
 

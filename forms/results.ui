@@ -38,6 +38,9 @@
    </item>
    <item>
     <widget class="QPushButton" name="restart">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="text">
       <string>Recommencer</string>
      </property>
