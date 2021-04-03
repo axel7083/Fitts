@@ -35,6 +35,7 @@ void MainWindow::onSettingsEvent(int val, void *obj) {
     switch(val) {
     case SETTINGS_CLOSE:
         model = (FittsModel*) obj;
+        qDebug() << model->nbCible;
         openHome();
         break;
     default:

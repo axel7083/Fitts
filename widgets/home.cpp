@@ -19,7 +19,6 @@ Home::~Home()
     delete ui;
 }
 
-
 // Cette fonction est un callback du widget graphwidget
 void Home::onGraphFinish(FittsModel* val) {
     qDebug() << "onGraphFinish";

@@ -1,8 +1,5 @@
 #include "graphicwidget.h"
 
-
-
-
 /*
 Cette classe contient de nombreuse fonction
 qui n'ont pas été créer par les auteurs du programme
@@ -16,8 +13,12 @@ GraphicWidget::GraphicWidget(FittsModel *model) {
     else
         fittsModel = model;
 
+    qDebug() << fittsModel->nbCible;
+
     // On met en place le widget
     setup();
+
+    this->setMinimumSize(this->width(), this->height());
 
     // On lance le jeu
     initGame();
@@ -44,6 +45,8 @@ void GraphicWidget::initGame() {
     scene()->clear();
 
     this->fittsModel->times.clear();
+
+    this->fittsModel->cibleLeft = this->fittsModel->nbCible;
 
     if(this->fittsModel->maxSize >= this->width() / 2)
         this->fittsModel->maxSize = this->width() / 2;
@@ -100,15 +103,22 @@ void GraphicWidget::nextCible() {
     }
 
     // On génère la taille du cercle rouge
-    // qrand() % ((high + 1) - low) + low;
-    int size = qrand() % ((this->fittsModel->maxSize + 1) - this->fittsModel->minSize) + this->fittsModel->minSize;
+    int size = QRandomGenerator::global()->bounded(this->fittsModel->minSize, this->fittsModel->maxSize);
+
+    //qDebug() << "size " + QString::number(size);
     // Car on veut le rayon
     // On place le cercle dans la scene (Attention faut pas qu'il soit en dehors du cadre)
     int sceneW = int(scene()->width());
     int sceneH = int(scene()->height());
 
-    qreal posX = qrand() % ((sceneW - size) - size) + size;
-    qreal posY = qrand() % ((sceneH - size) - size) + size;
+    //qDebug() << "sceneW " + QString::number(sceneW);
+    //qDebug() << "sceneW " + QString::number(sceneH);
+
+    int posX = QRandomGenerator::global()->bounded(sceneW);
+    int posY = QRandomGenerator::global()->bounded(sceneH);
+
+    //qDebug() << posX;
+    //qDebug() << posY;
 
     // On stock les infos sur le cercle
     this->fittsModel->cercleCenter.append(QPoint(int(posX),int(posY)));

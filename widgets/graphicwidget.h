@@ -7,6 +7,8 @@
 #include <QDebug>
 #include <QElapsedTimer>
 #include <math.h>
+#include <QLayout>
+#include <QRandomGenerator>
 
 #include "./models/fittsmodel.h"
 

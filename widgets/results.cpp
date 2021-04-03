@@ -6,18 +6,32 @@ Results::Results(FittsModel *model, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Results)
 {
+    this->model = model;
     ui->setupUi(this);
 
+    //container
+    // TabWidget
+    QTabWidget *tab = new QTabWidget();
 
-    // Creating a chart view
-    plot = new QChartView;
+    tab->addTab(createQChartView(buildGraph_1(model)), "Graphique 1");
+    tab->addTab(createQChartView(buildGraph_2(model)), "Graphique 2");
+
+
+    ui->container->addWidget(tab);
+
+}
+
+
+
+QChartView *Results::createQChartView(QChart *chart) {
+    QChartView *plot = new QChartView;
 
     // Using utils function, building the chart
-    plot->setChart(buildGraphResults(model));
+    plot->setChart(chart);
     plot->setRenderHint(QPainter::Antialiasing);
-
-    // Adding the chart to the layout
-    ui->container->addWidget(plot);
+  //  plot->layout()->setMargin(0);
+  //  plot->layout()->setSpacing(0);
+    return plot;
 }
 
 Results::~Results()
@@ -27,5 +41,5 @@ Results::~Results()
 
 void Results::on_restart_clicked()
 {
-     emit onResultsEvent(RESULTS_RESTART);
+    emit onResultsEvent(RESULTS_RESTART);
 }

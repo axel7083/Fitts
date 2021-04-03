@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QChart>
 #include <QChartView>
+#include <QVBoxLayout>
 
 #include "utils.h"
 #include "constants.h"
@@ -23,8 +24,11 @@ public:
     ~Results();
 
 private:
+    QChartView *createQChartView(QChart *chart);
+    FittsModel *model;
     Ui::Results *ui;
-    QChartView *plot;
+    QChartView *plot1;
+    QChartView *plot2;
 
 
 signals:

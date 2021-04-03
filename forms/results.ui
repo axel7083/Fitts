@@ -48,6 +48,9 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>restart</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

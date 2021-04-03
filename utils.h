@@ -27,6 +27,7 @@ QT_CHARTS_USE_NAMESPACE
 QString getLangue(int i);
 void setupLanguage(QApplication* app, QTranslator *translator);
 void updateLanguage(QSettings *settings, QTranslator *translator);
-QChart *buildGraphResults(FittsModel *fittsModel);
+QChart *buildGraph_1(FittsModel *fittsModel);
+QChart *buildGraph_2(FittsModel *fittsModel);
 
 #endif // UTILS_H

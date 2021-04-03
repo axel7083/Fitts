@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>653</width>
-    <height>367</height>
+    <width>843</width>
+    <height>548</height>
    </rect>
   </property>
   <property name="palette">
@@ -56,7 +56,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>653</width>
+     <width>843</width>
      <height>21</height>
     </rect>
    </property>
@@ -64,22 +64,6 @@
     <property name="title">
      <string>Fichier</string>
     </property>
-    <widget class="QMenu" name="menuImportation">
-     <property name="title">
-      <string>Importation</string>
-     </property>
-     <addaction name="actionParam_tres"/>
-     <addaction name="actionR_sultats_2"/>
-    </widget>
-    <widget class="QMenu" name="menuExportation">
-     <property name="title">
-      <string>Exportation</string>
-     </property>
-     <addaction name="actionParam_tres_2"/>
-     <addaction name="actionR_sultats_3"/>
-    </widget>
-    <addaction name="menuImportation"/>
-    <addaction name="menuExportation"/>
     <addaction name="separator"/>
     <addaction name="actionQuitter"/>
    </widget>

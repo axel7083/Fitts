@@ -57,7 +57,50 @@ void updateLanguage(QSettings *settings, QTranslator *translator) {
     }
 }
 
-QChart *buildGraphResults(FittsModel *fittsModel) {
+QChart *buildGraph_2(FittsModel *fittsModel) {
+    QChart *chart = new QChart;
+
+    chart->setTitle("Temps d'exécution en fonction de la distance relative");
+    chart->setAnimationOptions(QChart::AllAnimations);
+    chart->createDefaultAxes();
+    chart->legend()->setVisible(true);
+    chart->legend()->setAlignment(Qt::AlignBottom);
+
+    QLineSeries *fittsSeries = new QLineSeries;
+    fittsSeries->setName("Courbe théorique");
+    QCategoryAxis *axis = new QCategoryAxis;
+
+    QList<double> fittsValues;
+
+    for(int i = 0; i < fittsModel->nbCible; ++i) {
+        // Calculé la valeur théorique
+        double D = sqrt(pow(fittsModel->clickPoints[i].x() - fittsModel->cercleCenter[i].x(),2) + pow(fittsModel->clickPoints[i].y() - fittsModel->cercleCenter[i].y(),2));
+        // On multiplie par 100 pour être en ms
+        double value = (fittsModel->a * 1000) + ((fittsModel->b * 1000) *  log2((D / fittsModel->cercleSize[i]) + 1));
+        fittsValues.append(value);
+        fittsSeries->append(i,value);
+
+        axis->append("D:" + QString::number(D),i);
+    }
+
+    axis->setLabelsPosition(QCategoryAxis::AxisLabelsPositionOnValue);
+    axis->setTitleText("Distance relative");
+
+    chart->addSeries(fittsSeries);
+
+    chart->setAxisX(axis,fittsSeries);
+
+    QValueAxis *axisY = new QValueAxis;
+    axisY->setTitleText("temps (en ms)");
+    chart->setAxisY(axisY,fittsSeries);
+
+    return chart;
+}
+
+
+
+
+QChart *buildGraph_1(FittsModel *fittsModel) {
 
     QChart *chart = new QChart;
 
@@ -78,10 +121,12 @@ QChart *buildGraphResults(FittsModel *fittsModel) {
     for(int i = 0; i < fittsModel->nbCible; ++i) {
         double T = fittsModel->times[i];
         expSeries->append(i,T);
-        double D = sqrt(pow(fittsModel->clickPoints[i].x() - fittsModel->cercleCenter[i].x(),2) + pow(fittsModel->clickPoints[i].y() - fittsModel->cercleCenter[i].y(),2));
 
+
+        // Calculé la valeur théorique
+        double D = sqrt(pow(fittsModel->clickPoints[i].x() - fittsModel->cercleCenter[i].x(),2) + pow(fittsModel->clickPoints[i].y() - fittsModel->cercleCenter[i].y(),2));
         // On multiplie par 100 pour être en ms
-        double value = (fittsModel->a * 1000) + ((fittsModel->b * 1000) * log2((D / fittsModel->cercleSize[i]) + 1));
+        double value = (fittsModel->a * 1000) + ((fittsModel->b * 1000) *  log2((D / fittsModel->cercleSize[i]) + 1));
         fittsValues.append(value);
         fittsSeries->append(i,value);
 
@@ -134,8 +179,6 @@ QChart *buildGraphResults(FittsModel *fittsModel) {
 
     // On stock itc 95%
     fittsModel->itc95 = 2 * fittsModel->erreurType;
-
-    //this->fittsView->displayResults();
 
     return chart;
 }
