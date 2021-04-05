@@ -1,13 +1,19 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
+// HOME CONSTANTS
 const static int HOME_GAME_END = 0x1;
 const static int HOME_OPEN_SETTINGS = 0x2;
+const static int HOME_OPEN_RAPPEL = 0x3;
+const static int HOME_EXIT_PRGM = 0x4;
 
-const static int SETTINGS_CLOSE = 0x3;
+// SETTINGS CONSTANTS
+const static int SETTINGS_CLOSE = 0x1;
 
-const static int RESULTS_RESTART = 0x4;
+// RESULTS CONSTANTS
+const static int RESULTS_RESTART = 0x1;
+const static int RESULTS_EXIT_PRGM = 0x2;
 
-const static int HOME_OPEN_RAPPEL = 0x5;
-const static int RAPPEL_CLOSE = 0x6;
+// REMINDER CONSTANTS
+const static int REMINDER_CLOSE = 0x1;
 #endif // CONSTANTS_H

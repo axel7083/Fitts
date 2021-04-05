@@ -3,7 +3,7 @@
         <file>icons/flag_en.ico</file>
         <file>icons/fr_flag.ico</file>
         <file>icons/icon.ico</file>
-        <file>icons/formule.PNG</file>
         <file>icons/fitts_formula.png</file>
+        <file>icons/Fitts_Law_example.png</file>
     </qresource>
 </RCC>

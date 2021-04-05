@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>423</width>
-    <height>326</height>
+    <width>636</width>
+    <height>475</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,27 +15,48 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <layout class="QVBoxLayout" name="homeContainer">
+    <layout class="QVBoxLayout" name="LLHome">
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QLabel" name="label">
-         <property name="font">
-          <font>
-           <pointsize>20</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Accueil</string>
-         </property>
-        </widget>
-       </item>
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"> font: 20pt; padding-bottom: 10px;</string>
+       </property>
+       <property name="text">
+        <string>Accueil</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="homeContainer"/>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
         <widget class="QPushButton" name="home_rappel_btn">
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <pointsize>12</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 12pt;</string>
          </property>
          <property name="text">
           <string>Rappel</string>
@@ -44,13 +65,54 @@
        </item>
        <item>
         <widget class="QPushButton" name="home_settings_btn">
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="font">
           <font>
-           <pointsize>20</pointsize>
+           <pointsize>12</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">font: 12pt;</string>
+         </property>
          <property name="text">
-          <string>Ouvrir les paramètres</string>
+          <string>Paramètres</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Exit">
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 12pt;</string>
+         </property>
+         <property name="text">
+          <string>Quitter</string>
          </property>
         </widget>
        </item>
@@ -60,9 +122,6 @@
    </item>
   </layout>
  </widget>
- <tabstops>
-  <tabstop>home_settings_btn</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

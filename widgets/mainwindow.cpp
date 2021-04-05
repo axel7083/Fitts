@@ -23,7 +23,10 @@ void MainWindow::onHomeEvent(int val, void *obj) {
         openSettings();
         break;
     case HOME_OPEN_RAPPEL:
-        openRappel();
+        openReminder();
+        break;
+    case HOME_EXIT_PRGM:
+        qApp->exit();
         break;
     default:
 
@@ -46,14 +49,12 @@ void MainWindow::onSettingsEvent(int val, void *obj) {
         break;
     }
 }
-//Ceci permet de recevoir des events depuis le widget Rappel
-void MainWindow::onRappelEvent(int val, void *obj) {
+//Ceci permet de recevoir des events depuis le widget Reminder
+void MainWindow::onReminderEvent(int val, void *obj) {
     qDebug() << "[MainWindow] onRappelEvent";
 
     switch(val) {
-    case RAPPEL_CLOSE:
-        model = (FittsModel*) obj;
-        qDebug() << model->nbCible;
+    case REMINDER_CLOSE:
         openHome();
         break;
     default:
@@ -69,6 +70,8 @@ void MainWindow::onResultsEvent(int val) {
     case RESULTS_RESTART:
         openHome();
         break;
+    case RESULTS_EXIT_PRGM:
+        qApp->exit();
     default:
 
         break;
@@ -96,11 +99,11 @@ void MainWindow::openSettings() {
     this->setCentralWidget(settings);
 }
 
-void MainWindow::openRappel() {
-    qDebug() << "Opening Rappel";
-    rappel = new Rappel();
-    connect(rappel, SIGNAL(onRappelEvent(int,void*)), this, SLOT(onRappelEvent(int,void*)));
-    this->setCentralWidget(rappel);
+void MainWindow::openReminder() {
+    qDebug() << "Opening Reminder";
+    reminder = new Reminder();
+    connect(reminder, SIGNAL(onReminderEvent(int,void*)), this, SLOT(onReminderEvent(int,void*)));
+    this->setCentralWidget(reminder);
 }
 MainWindow::~MainWindow()
 {

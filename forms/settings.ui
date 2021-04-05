@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>754</width>
-    <height>421</height>
+    <width>783</width>
+    <height>454</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">font: 15pt &quot;Roboto&quot;;</string>
   </property>
   <property name="windowFilePath">
    <string/>
@@ -26,11 +26,18 @@
       <widget class="QLabel" name="label">
        <property name="font">
         <font>
+         <family>Roboto</family>
          <pointsize>20</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+         <underline>false</underline>
+         <strikeout>false</strikeout>
+         <kerning>true</kerning>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true"/>
+        <string notr="true"> font: 20pt; padding-bottom: 10px;</string>
        </property>
        <property name="text">
         <string>Paramètres</string>
@@ -54,7 +61,11 @@
            </property>
            <property name="font">
             <font>
+             <family>Roboto</family>
              <pointsize>15</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
            </property>
            <property name="text">
@@ -66,8 +77,15 @@
           <widget class="QLabel" name="label_3">
            <property name="font">
             <font>
-             <pointsize>15</pointsize>
+             <family>Roboto</family>
+             <pointsize>13</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(75, 75, 75); font: 13pt</string>
            </property>
            <property name="text">
             <string>a est la valeur de T lorsque la distance entre le curseur et la cible est nulle</string>
@@ -111,7 +129,11 @@
          </property>
          <property name="font">
           <font>
+           <family>Roboto</family>
            <pointsize>15</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
            <strikeout>false</strikeout>
           </font>
          </property>
@@ -137,7 +159,11 @@
           <widget class="QLabel" name="label_4">
            <property name="font">
             <font>
+             <family>Roboto</family>
              <pointsize>15</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
            </property>
            <property name="text">
@@ -149,8 +175,15 @@
           <widget class="QLabel" name="label_5">
            <property name="font">
             <font>
-             <pointsize>15</pointsize>
+             <family>Roboto</family>
+             <pointsize>13</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(75, 75, 75); font: 13pt</string>
            </property>
            <property name="text">
             <string>b est la vitesse à laquelle évolue T lorsque D est non nulle</string>
@@ -182,7 +215,11 @@
          </property>
          <property name="font">
           <font>
+           <family>Roboto</family>
            <pointsize>15</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
          </property>
          <property name="specialValueText">
@@ -207,7 +244,11 @@
           <widget class="QLabel" name="label_6">
            <property name="font">
             <font>
+             <family>Roboto</family>
              <pointsize>15</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
            </property>
            <property name="text">
@@ -219,8 +260,15 @@
           <widget class="QLabel" name="label_7">
            <property name="font">
             <font>
-             <pointsize>15</pointsize>
+             <family>Roboto</family>
+             <pointsize>13</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(75, 75, 75); font: 13pt</string>
            </property>
            <property name="text">
             <string>Définit le nombre total de cible</string>
@@ -252,7 +300,11 @@
          </property>
          <property name="font">
           <font>
+           <family>Roboto</family>
            <pointsize>15</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
          </property>
          <property name="specialValueText">
@@ -277,7 +329,11 @@
           <widget class="QLabel" name="label_8">
            <property name="font">
             <font>
+             <family>Roboto</family>
              <pointsize>15</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
            </property>
            <property name="text">
@@ -289,8 +345,15 @@
           <widget class="QLabel" name="label_9">
            <property name="font">
             <font>
-             <pointsize>15</pointsize>
+             <family>Roboto</family>
+             <pointsize>13</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(75, 75, 75); font: 13pt</string>
            </property>
            <property name="text">
             <string>Taille minimum en pixel(s) des cibles</string>
@@ -322,7 +385,11 @@
          </property>
          <property name="font">
           <font>
+           <family>Roboto</family>
            <pointsize>15</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
          </property>
          <property name="specialValueText">
@@ -347,7 +414,11 @@
           <widget class="QLabel" name="label_10">
            <property name="font">
             <font>
+             <family>Roboto</family>
              <pointsize>15</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
            </property>
            <property name="text">
@@ -359,8 +430,15 @@
           <widget class="QLabel" name="label_11">
            <property name="font">
             <font>
-             <pointsize>15</pointsize>
+             <family>Roboto</family>
+             <pointsize>13</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(75, 75, 75); font: 13pt</string>
            </property>
            <property name="text">
             <string>Taille maximum en pixel(s) des cibles</string>
@@ -392,7 +470,11 @@
          </property>
          <property name="font">
           <font>
+           <family>Roboto</family>
            <pointsize>15</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
          </property>
          <property name="specialValueText">
@@ -404,6 +486,19 @@
         </widget>
        </item>
       </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_7">
@@ -430,8 +525,15 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>20</pointsize>
+           <family>Roboto</family>
+           <pointsize>12</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 12pt;</string>
          </property>
          <property name="text">
           <string>Restaurer les valeurs par default</string>
@@ -454,11 +556,15 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>20</pointsize>
+           <family>Roboto</family>
+           <pointsize>12</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true"/>
+          <string notr="true">font: 12pt;</string>
          </property>
          <property name="text">
           <string>Valider</string>

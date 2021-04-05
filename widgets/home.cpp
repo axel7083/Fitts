@@ -35,5 +35,10 @@ void Home::on_home_settings_btn_clicked()
 
 void Home::on_home_rappel_btn_clicked()
 {
-      emit onHomeEvent(HOME_OPEN_RAPPEL,NULL);
+    emit onHomeEvent(HOME_OPEN_RAPPEL,NULL);
+}
+
+void Home::on_Exit_clicked()
+{
+    emit onHomeEvent(HOME_EXIT_PRGM,NULL);
 }

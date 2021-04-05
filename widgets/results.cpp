@@ -29,8 +29,7 @@ QChartView *Results::createQChartView(QChart *chart) {
     // Using utils function, building the chart
     plot->setChart(chart);
     plot->setRenderHint(QPainter::Antialiasing);
-  //  plot->layout()->setMargin(0);
-  //  plot->layout()->setSpacing(0);
+
     return plot;
 }
 
@@ -42,4 +41,9 @@ Results::~Results()
 void Results::on_restart_clicked()
 {
     emit onResultsEvent(RESULTS_RESTART);
+}
+
+void Results::on_exit_clicked()
+{
+    emit onResultsEvent(RESULTS_EXIT_PRGM);
 }

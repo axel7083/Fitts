@@ -17,7 +17,7 @@ SOURCES += \
     ./widgets/results.cpp \
     main.cpp \
     utils.cpp \
-    widgets/rappel.cpp
+    widgets/reminder.cpp
 
 HEADERS += \
     ./models/fittsmodel.h \
@@ -28,14 +28,14 @@ HEADERS += \
     ./widgets/results.h \
     constants.h \
     utils.h \
-    widgets/rappel.h
+    widgets/reminder.h
 
 FORMS += \
     ./forms/home.ui \
     ./forms/mainwindow.ui \
     ./forms/results.ui \
     ./forms/settings.ui \
-    forms/rappel.ui
+    forms/reminder.ui
 
 TRANSLATIONS += \
     src/translations/Fitts_en_EN.ts
