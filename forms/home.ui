@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>423</width>
+    <height>326</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,6 +31,18 @@
         </widget>
        </item>
        <item>
+        <widget class="QPushButton" name="home_rappel_btn">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Rappel</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QPushButton" name="home_settings_btn">
          <property name="font">
           <font>
@@ -48,6 +60,9 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>home_settings_btn</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
