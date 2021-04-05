@@ -80,11 +80,11 @@ QChart *buildGraph_2(FittsModel *fittsModel) {
         fittsValues.append(value);
         fittsSeries->append(i,value);
 
-        axis->append("log2(2D/L):" + QString::number(value),i);
+        axis->append(QString::number(value),i);
     }
 
     axis->setLabelsPosition(QCategoryAxis::AxisLabelsPositionOnValue);
-    axis->setTitleText("Distance relative");
+    axis->setTitleText("log2(2D/L)");
 
     chart->addSeries(fittsSeries);
 
