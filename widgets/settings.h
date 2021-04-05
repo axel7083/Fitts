@@ -23,6 +23,7 @@ signals:
 private slots:
     void on_validate_btn_clicked();
     void on_restore_default_clicked();
+    void changeEvent(QEvent* event);
 
 private:
     Ui::Settings *ui;

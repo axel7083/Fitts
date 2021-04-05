@@ -33,8 +33,8 @@ private slots:
     void onGraphFinish(FittsModel*);
     void on_home_settings_btn_clicked();
     void on_home_rappel_btn_clicked();
-    void on_pushButton_clicked();
     void on_Exit_clicked();
+    void changeEvent(QEvent* event);
 };
 
 #endif // HOME_H

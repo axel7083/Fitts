@@ -32,6 +32,7 @@ signals:
 private slots:
     void on_restart_clicked();
     void on_exit_clicked();
+    void changeEvent(QEvent* event);
 };
 
 #endif // RESULTS_H

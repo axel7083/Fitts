@@ -48,3 +48,10 @@ void Settings::on_restore_default_clicked()
     fittsModel = new FittsModel();
     setupData();
 }
+
+void Settings::changeEvent(QEvent* event)
+{
+    if (event->type() == QEvent::LanguageChange)
+        // retranslate designer form (single inheritance approach)
+        ui->retranslateUi(this);
+}

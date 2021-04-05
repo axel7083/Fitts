@@ -38,7 +38,8 @@ FORMS += \
     forms/reminder.ui
 
 TRANSLATIONS += \
-    src/translations/Fitts_en_EN.ts
+    src/translation/Fitts_en_EN.ts \
+    src/translation/Fitts_fr_FR.ts
 
 # Icon
 win32:RC_ICONS += src/icons/icon.ico

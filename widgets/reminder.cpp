@@ -20,3 +20,10 @@ void Reminder::on_RetourButton_clicked()
 {
       emit onReminderEvent(REMINDER_CLOSE, NULL);
 }
+
+void Reminder::changeEvent(QEvent* event)
+{
+    if (event->type() == QEvent::LanguageChange)
+        // retranslate designer form (single inheritance approach)
+        ui->retranslateUi(this);
+}

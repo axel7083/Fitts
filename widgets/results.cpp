@@ -6,15 +6,14 @@ Results::Results(FittsModel *model, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Results)
 {
-    this->model = model;
     ui->setupUi(this);
 
     //container
     // TabWidget
     QTabWidget *tab = new QTabWidget();
 
-    tab->addTab(createQChartView(buildGraph_1(model)), "Graphique 1");
-    tab->addTab(createQChartView(buildGraph_2(model)), "Graphique 2");
+    tab->addTab(createQChartView(buildGraph_1(model)), "Graph 1");
+    tab->addTab(createQChartView(buildGraph_2(model)), "Graph 2");
 
 
     ui->container->addWidget(tab);
@@ -46,4 +45,11 @@ void Results::on_restart_clicked()
 void Results::on_exit_clicked()
 {
     emit onResultsEvent(RESULTS_EXIT_PRGM);
+}
+
+void Results::changeEvent(QEvent* event)
+{
+    if (event->type() == QEvent::LanguageChange)
+        // retranslate designer form (single inheritance approach)
+        ui->retranslateUi(this);
 }

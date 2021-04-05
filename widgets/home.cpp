@@ -31,8 +31,6 @@ void Home::on_home_settings_btn_clicked()
     emit onHomeEvent(HOME_OPEN_SETTINGS,NULL);
 }
 
-
-
 void Home::on_home_rappel_btn_clicked()
 {
     emit onHomeEvent(HOME_OPEN_RAPPEL,NULL);
@@ -41,4 +39,11 @@ void Home::on_home_rappel_btn_clicked()
 void Home::on_Exit_clicked()
 {
     emit onHomeEvent(HOME_EXIT_PRGM,NULL);
+}
+
+void Home::changeEvent(QEvent* event)
+{
+    if (event->type() == QEvent::LanguageChange)
+        // retranslate designer form (single inheritance approach)
+        ui->retranslateUi(this);
 }

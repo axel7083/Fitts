@@ -22,6 +22,7 @@ signals:
 
 private slots:
     void on_RetourButton_clicked();
+    void changeEvent(QEvent* event);
 
 private:
     Ui::Reminder *ui;
