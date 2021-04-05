@@ -24,10 +24,11 @@ public:
     ~Results();
 
 private:
+    QChartView *createQChartView(QChart *chart);
     FittsModel *model;
     Ui::Results *ui;
-    QChartView *createQChartView(QChart *chart);
-
+    QChartView *plot1;
+    QChartView *plot2;
 
 
 signals:
