@@ -10,6 +10,7 @@
 #include "./widgets/results.h"
 #include "ui_mainwindow.h"
 #include "utils.h"
+#include "rappel.h"
 #include "constants.h"
 
 QT_BEGIN_NAMESPACE
@@ -30,11 +31,13 @@ private slots:
     void on_actionQuitter_triggered();
     void onHomeEvent(int, void *);
     void onSettingsEvent(int, void *);
+    void onRappelEvent(int, void *);
     void onResultsEvent(int);
     void changeEvent(QEvent* event);
 
 private:
     void openSettings();
+    void openRappel();
     void openHome();
     void openResults(FittsModel *model);
     Ui::MainWindow *ui;
@@ -43,6 +46,7 @@ private:
 
     Home *home = NULL;
     Settings *settings = NULL;
+    Rappel *rappel = NULL;
     Results *results = NULL;
 
     FittsModel *model = NULL;

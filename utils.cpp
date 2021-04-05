@@ -75,12 +75,12 @@ QChart *buildGraph_2(FittsModel *fittsModel) {
     for(int i = 0; i < fittsModel->nbCible; ++i) {
         // Calculé la valeur théorique
         double D = sqrt(pow(fittsModel->clickPoints[i].x() - fittsModel->cercleCenter[i].x(),2) + pow(fittsModel->clickPoints[i].y() - fittsModel->cercleCenter[i].y(),2));
-        // On multiplie par 100 pour être en ms
-        double value = (fittsModel->a * 1000) + ((fittsModel->b * 1000) *  log2((D / fittsModel->cercleSize[i]) + 1));
+        // On multiplie par 1000 pour être en ms
+        double value = log2((((2*D) / fittsModel->cercleSize[i]) + 1));
         fittsValues.append(value);
         fittsSeries->append(i,value);
 
-        axis->append("D:" + QString::number(D),i);
+        axis->append("log2(2D/L):" + QString::number(value),i);
     }
 
     axis->setLabelsPosition(QCategoryAxis::AxisLabelsPositionOnValue);
@@ -125,7 +125,7 @@ QChart *buildGraph_1(FittsModel *fittsModel) {
 
         // Calculé la valeur théorique
         double D = sqrt(pow(fittsModel->clickPoints[i].x() - fittsModel->cercleCenter[i].x(),2) + pow(fittsModel->clickPoints[i].y() - fittsModel->cercleCenter[i].y(),2));
-        // On multiplie par 100 pour être en ms
+        // On multiplie par 1000 pour être en ms
         double value = (fittsModel->a * 1000) + ((fittsModel->b * 1000) *  log2((D / fittsModel->cercleSize[i]) + 1));
         fittsValues.append(value);
         fittsSeries->append(i,value);

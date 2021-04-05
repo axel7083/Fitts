@@ -22,6 +22,9 @@ void MainWindow::onHomeEvent(int val, void *obj) {
     case HOME_OPEN_SETTINGS:
         openSettings();
         break;
+    case HOME_OPEN_RAPPEL:
+        openRappel();
+        break;
     default:
 
         break;
@@ -34,6 +37,21 @@ void MainWindow::onSettingsEvent(int val, void *obj) {
 
     switch(val) {
     case SETTINGS_CLOSE:
+        model = (FittsModel*) obj;
+        qDebug() << model->nbCible;
+        openHome();
+        break;
+    default:
+
+        break;
+    }
+}
+//Ceci permet de recevoir des events depuis le widget Rappel
+void MainWindow::onRappelEvent(int val, void *obj) {
+    qDebug() << "[MainWindow] onRappelEvent";
+
+    switch(val) {
+    case RAPPEL_CLOSE:
         model = (FittsModel*) obj;
         qDebug() << model->nbCible;
         openHome();
@@ -78,6 +96,12 @@ void MainWindow::openSettings() {
     this->setCentralWidget(settings);
 }
 
+void MainWindow::openRappel() {
+    qDebug() << "Opening Rappel";
+    rappel = new Rappel();
+    connect(rappel, SIGNAL(onRappelEvent(int,void*)), this, SLOT(onRappelEvent(int,void*)));
+    this->setCentralWidget(rappel);
+}
 MainWindow::~MainWindow()
 {
     delete ui;
