@@ -94,6 +94,7 @@ void GraphicWidget::nextCible() {
         this->fittsModel->cibleLeft--;
     //this->fittsView->updateTestMsg(); TODO:
 
+    emit onTargetChange(this->fittsModel->cibleLeft);
     scene()->clear();
 
     // On stop si c'est finis

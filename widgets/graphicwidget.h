@@ -21,6 +21,7 @@ public:
 
 signals:
     void onFinish(FittsModel*);
+    void onTargetChange(int targetLeft);
 
 protected:
     void mousePressEvent(QMouseEvent *event);

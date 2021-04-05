@@ -25,12 +25,14 @@ public:
 private:
     Ui::Home *ui;
     GraphicWidget *graphicView;
+    QLabel *information;
 
 signals:
     void onHomeEvent(int, void *);
 
 private slots:
     void onGraphFinish(FittsModel*);
+    void onTargetChange(int);
     void on_home_settings_btn_clicked();
     void on_home_rappel_btn_clicked();
     void on_Exit_clicked();

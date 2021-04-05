@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>636</width>
+    <width>640</width>
     <height>475</height>
    </rect>
   </property>
@@ -35,7 +35,7 @@
       </widget>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="homeContainer"/>
+      <layout class="QVBoxLayout" name="homeContainer"/>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">

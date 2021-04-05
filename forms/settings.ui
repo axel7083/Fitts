@@ -307,6 +307,12 @@
            <bold>false</bold>
           </font>
          </property>
+         <property name="accessibleDescription">
+          <string/>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <property name="specialValueText">
           <string>10</string>
          </property>

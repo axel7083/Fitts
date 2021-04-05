@@ -8,15 +8,27 @@ Home::Home(FittsModel *model, QWidget *parent) :
     // On met en place l'UI avec le fichier généré à partir de mainwindows.ui
     ui->setupUi(this);
 
+    information = new QLabel();
+    //information->setText("Hello world");
+    ui->homeContainer->addWidget(information);
+    information->setFont(QFont("Roboto", 15));
+
     // On ajoute nous même le graphique CAR il ne peut pas être ajouter depuis l'éditeur
     graphicView = new GraphicWidget(model);
     connect(graphicView, SIGNAL(onFinish(FittsModel*)), this, SLOT(onGraphFinish(FittsModel*)));
+    connect(graphicView, SIGNAL(onTargetChange(int)), this, SLOT(onTargetChange(int)));
     ui->homeContainer->addWidget(graphicView);
+
+
 }
 
 Home::~Home()
 {
     delete ui;
+}
+
+void Home::onTargetChange(int val) {
+    information->setText("Target left: " + QString::number(val));
 }
 
 // Cette fonction est un callback du widget graphwidget

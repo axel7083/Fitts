@@ -11,7 +11,7 @@
     <message>
         <location filename="../../forms/home.ui" line="33"/>
         <source>Accueil</source>
-        <translation>Acceuil</translation>
+        <translation>Accueil</translation>
     </message>
     <message>
         <location filename="../../forms/home.ui" line="62"/>
