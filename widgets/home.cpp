@@ -18,8 +18,6 @@ Home::Home(FittsModel *model, QWidget *parent) :
     connect(graphicView, SIGNAL(onFinish(FittsModel*)), this, SLOT(onGraphFinish(FittsModel*)));
     connect(graphicView, SIGNAL(onTargetChange(int)), this, SLOT(onTargetChange(int)));
     ui->homeContainer->addWidget(graphicView);
-
-
 }
 
 Home::~Home()
