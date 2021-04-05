@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>783</width>
-    <height>454</height>
+    <width>852</width>
+    <height>538</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -101,7 +101,7 @@
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>40</width>
+           <width>2</width>
            <height>20</height>
           </size>
          </property>
@@ -109,10 +109,16 @@
        </item>
        <item>
         <widget class="QDoubleSpinBox" name="edit_a">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
-           <width>80</width>
-           <height>0</height>
+           <width>90</width>
+           <height>60</height>
           </size>
          </property>
          <property name="sizeIncrement">
@@ -209,8 +215,8 @@
         <widget class="QDoubleSpinBox" name="edit_b">
          <property name="minimumSize">
           <size>
-           <width>80</width>
-           <height>0</height>
+           <width>90</width>
+           <height>60</height>
           </size>
          </property>
          <property name="font">
@@ -294,8 +300,8 @@
         <widget class="QSpinBox" name="edit_target_count">
          <property name="minimumSize">
           <size>
-           <width>80</width>
-           <height>0</height>
+           <width>90</width>
+           <height>60</height>
           </size>
          </property>
          <property name="font">
@@ -385,8 +391,8 @@
         <widget class="QSpinBox" name="edit_min_target">
          <property name="minimumSize">
           <size>
-           <width>80</width>
-           <height>0</height>
+           <width>90</width>
+           <height>60</height>
           </size>
          </property>
          <property name="font">
@@ -470,8 +476,8 @@
         <widget class="QSpinBox" name="edit_max_target">
          <property name="minimumSize">
           <size>
-           <width>80</width>
-           <height>0</height>
+           <width>90</width>
+           <height>60</height>
           </size>
          </property>
          <property name="font">
