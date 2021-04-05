@@ -27,9 +27,7 @@ private:
     QChartView *createQChartView(QChart *chart);
     FittsModel *model;
     Ui::Results *ui;
-    QChartView *plot1;
-    QChartView *plot2;
-
+    QChartView *createQChartView(QChart *chart);
 
 signals:
     void onResultsEvent(int);

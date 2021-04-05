@@ -24,12 +24,17 @@
      </property>
      <property name="maximumSize">
       <size>
-       <width>100</width>
+       <width>120</width>
        <height>50</height>
       </size>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
      <property name="text">
-      <string>Results</string>
+      <string>Résultats</string>
      </property>
     </widget>
    </item>
@@ -38,6 +43,11 @@
    </item>
    <item>
     <widget class="QPushButton" name="restart">
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true"/>
      </property>
