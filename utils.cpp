@@ -182,3 +182,42 @@ QChart *buildGraph_1(FittsModel *fittsModel) {
 
     return chart;
 }
+
+QWidget *generateResultLayout(FittsModel *model, QChartView* chart) {
+    QWidget *central = new QWidget;
+    central->setStyleSheet("background: white");
+    QVBoxLayout *resultLayout = new QVBoxLayout(central);
+
+
+    resultLayout->addWidget(chart);
+
+    QGroupBox *resultBox =  new QGroupBox("Stats");
+    resultLayout->addWidget(resultBox);
+    QGridLayout *resultBoxLayout = new QGridLayout(resultBox);
+
+    QLabel *label = new QLabel("Ecart-Type : ");
+    resultBoxLayout->addWidget(label,0,0);
+    QLabel *ecartType = new QLabel(QString::number(model->ecartType));
+    resultBoxLayout->addWidget(ecartType,0,1);
+
+    label = new QLabel("Erreur-Type : ");
+    resultBoxLayout->addWidget(label,1,0);
+    QLabel *erreurType = new QLabel(QString::number(model->erreurType));
+    resultBoxLayout->addWidget(erreurType,1,1);
+
+    label = new QLabel("Différence moyenne : ");
+    resultBoxLayout->addWidget(label,0,2);
+    QLabel *diffMoy = new QLabel(QString::number(model->diffMoy));
+    resultBoxLayout->addWidget(diffMoy,0,3);
+
+    label = new QLabel("Intervalle de confiance à 95% : ");
+    resultBoxLayout->addWidget(label,1,2);
+    QLabel *itc95 = new QLabel(QString::number(model->itc95));
+    resultBoxLayout->addWidget(itc95,1,3);
+
+    resultBoxLayout->setColumnStretch(1,10);
+    resultBoxLayout->setColumnStretch(3,10);
+
+    resultLayout->addWidget(resultBox);
+    return central;
+}

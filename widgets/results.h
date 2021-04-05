@@ -5,6 +5,7 @@
 #include <QChart>
 #include <QChartView>
 #include <QVBoxLayout>
+#include <QGroupBox>
 
 #include "utils.h"
 #include "constants.h"

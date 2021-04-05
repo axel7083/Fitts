@@ -12,12 +12,13 @@ Results::Results(FittsModel *model, QWidget *parent) :
     // TabWidget
     QTabWidget *tab = new QTabWidget();
 
-    tab->addTab(createQChartView(buildGraph_1(model)), "Graphique 1");
+    // createQChartView(buildGraph_1(model))
+
+    tab->addTab(generateResultLayout(model,createQChartView(buildGraph_1(model))), "Graphique 1");
     tab->addTab(createQChartView(buildGraph_2(model)), "Graphique 2");
 
     ui->container->addWidget(tab);
 }
-
 
 
 QChartView *Results::createQChartView(QChart *chart) {
@@ -26,7 +27,7 @@ QChartView *Results::createQChartView(QChart *chart) {
     // Using utils function, building the chart
     plot->setChart(chart);
     plot->setRenderHint(QPainter::Antialiasing);
-
+    plot->setStyleSheet("background: white");
     return plot;
 }
 

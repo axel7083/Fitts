@@ -18,8 +18,9 @@
 #include <QBarSeries>
 #include <QBarSet>
 #include <QCategoryAxis>
-
-
+#include <QVBoxLayout>
+#include <QGroupBox>
+#include <QLabel>
 
 
 QT_CHARTS_USE_NAMESPACE
@@ -29,5 +30,7 @@ void setupLanguage(QApplication* app, QTranslator *translator);
 void updateLanguage(QSettings *settings, QTranslator *translator);
 QChart *buildGraph_1(FittsModel *fittsModel);
 QChart *buildGraph_2(FittsModel *fittsModel);
+QWidget *generateResultLayout(FittsModel *model, QChartView* chart);
+
 
 #endif // UTILS_H
