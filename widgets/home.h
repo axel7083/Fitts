@@ -32,7 +32,6 @@ signals:
 private slots:
     void onGraphFinish(FittsModel*);
     void on_home_settings_btn_clicked();
-    void on_home_rappel_btn_clicked();
 };
 
 #endif // HOME_H

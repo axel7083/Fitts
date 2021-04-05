@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>754</width>
-    <height>421</height>
+    <height>400</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
   <property name="windowFilePath">
    <string/>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QLabel" name="label">
@@ -65,7 +65,7 @@
          <item>
           <widget class="QLabel" name="label_3">
            <property name="text">
-            <string>a est la valeur de T lorsque la distance entre le curseur et la cible est nulle</string>
+            <string>Explication a quoi sert a</string>
            </property>
           </widget>
          </item>
@@ -143,7 +143,7 @@
          <item>
           <widget class="QLabel" name="label_5">
            <property name="text">
-            <string>b est la vitesse à laquelle évolue T lorsque D est non nulle</string>
+            <string>Explication a quoi sert b</string>
            </property>
           </widget>
          </item>

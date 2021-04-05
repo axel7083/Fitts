@@ -16,8 +16,7 @@ SOURCES += \
     ./widgets/settings.cpp \
     ./widgets/results.cpp \
     main.cpp \
-    utils.cpp \
-    widgets/rappel.cpp
+    utils.cpp
 
 HEADERS += \
     ./models/fittsmodel.h \
@@ -27,15 +26,13 @@ HEADERS += \
     ./widgets/settings.h \
     ./widgets/results.h \
     constants.h \
-    utils.h \
-    widgets/rappel.h
+    utils.h
 
 FORMS += \
     ./forms/home.ui \
     ./forms/mainwindow.ui \
     ./forms/results.ui \
-    ./forms/settings.ui \
-    forms/rappel.ui
+    ./forms/settings.ui
 
 TRANSLATIONS += \
     src/translations/Fitts_en_EN.ts
@@ -54,5 +51,4 @@ RESOURCES += \
 
 DISTFILES += \
     src/translation/Fitts_en_EN.qm \
-    src/translation/Fitts_fr_FR.qm \
-    data/formule.png
+    src/translation/Fitts_fr_FR.qm

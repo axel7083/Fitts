@@ -8,6 +8,4 @@ const static int SETTINGS_CLOSE = 0x3;
 
 const static int RESULTS_RESTART = 0x4;
 
-const static int HOME_OPEN_RAPPEL = 0x5;
-const static int RAPPEL_CLOSE = 0x6;
 #endif // CONSTANTS_H
