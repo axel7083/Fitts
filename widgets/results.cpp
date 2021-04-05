@@ -12,12 +12,10 @@ Results::Results(FittsModel *model, QWidget *parent) :
     // TabWidget
     QTabWidget *tab = new QTabWidget();
 
-    tab->addTab(createQChartView(buildGraph_1(model)), "Graph 1");
-    tab->addTab(createQChartView(buildGraph_2(model)), "Graph 2");
-
+    tab->addTab(createQChartView(buildGraph_1(model)), "Graphique 1");
+    tab->addTab(createQChartView(buildGraph_2(model)), "Graphique 2");
 
     ui->container->addWidget(tab);
-
 }
 
 
